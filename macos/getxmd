@@ -1,7 +1,7 @@
 #! /bin/bash
-FILES="${@}"
+FILES=${@}
 
-for FL in "${FILES}"
+for FL in $FILES
 do
     /usr/local/bin/tag --list "${FL}"
     /usr/local/bin/exiftool -S -Subject -Keywords "${FL}"    
