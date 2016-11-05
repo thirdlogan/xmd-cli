@@ -1,9 +1,2 @@
 #! /bin/bash
-FILES="${@}"
-
-for FL in "${FILES}"
-do
-    /usr/local/bin/exiftool -S -Subject -Keywords "${FL}"    
-done
-
-
+/usr/local/bin/exiftool -S -Subject -Keywords "${@:1}"    
