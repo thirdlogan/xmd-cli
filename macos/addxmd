@@ -1,0 +1,20 @@
+#!/bin/bash
+NEW_KW=$1
+
+for FL in ${@:2}
+do
+    echo "---"
+    NEWSUB_RAW=$(/usr/local/bin/exiftool -S -Keywords "${FL}" | sed -e "s/^Keywords: //")
+    NEWSUB=$(echo "${NEWSUB_RAW}" | sed -e "s/^/,/" | sed -e "s/$/,/")
+    echo "${NEWSUB}"
+
+    if [[ $NEWSUB =~ \,"${NEW_KW}"\, ]]; then
+        echo "NEWSUB: ${NEWSUB}"
+        echo "No changes needed"
+    else
+        NEWSUB=$(echo "${NEWSUB_RAW},${NEW_KW}" | sed -e "s/^\,//")
+        echo "Changing keywords/subject/tags to: ${NEWSUB}"
+        /usr/local/bin/tag --set "${NEWSUB}" "${FL}"
+        /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${NEWSUB}" -Keywords="${NEWSUB}" "${FL}"
+    fi
+done
