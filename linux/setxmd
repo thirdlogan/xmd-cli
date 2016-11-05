@@ -21,3 +21,4 @@ FILES="${@:2}"
         /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${KWS}" -Keywords="${KWS}" "${FILES}"
     #fi
 #fi
+

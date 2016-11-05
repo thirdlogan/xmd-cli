@@ -10,3 +10,4 @@ do
     /usr/local/bin/tag --set "${NEWSUB}" $FL
     /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${NEWSUB}" -Keywords="${NEWSUB}" $FL
 done
+

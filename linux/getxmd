@@ -1,2 +1,3 @@
 #! /bin/bash
 /usr/local/bin/exiftool -S -Subject -Keywords "${@:1}"    
+
