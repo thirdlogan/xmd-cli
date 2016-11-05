@@ -1,12 +1,12 @@
 #! /bin/bash
 RGX="s/,${1}//"
 
-for FL in $2
+for FL in "${@:2}"
 do
     echo "---"
     NEWSUB=$(/usr/local/bin/exiftool -S -Keywords "${FL}" | sed -e "s/Keywords: //" | sed -e "s/$/,/" | sed -e "${RGX}" )
     NEWSUB=$(echo "${NEWSUB}" | sed -e "s/,$//")
     echo "NEWSUB: ${NEWSUB}"
-    /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${NEWSUB}" -Keywords="${NEWSUB}" $FL
+    /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${NEWSUB}" -Keywords="${NEWSUB}" "${FL}"
 done
 
