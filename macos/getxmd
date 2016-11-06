@@ -1,4 +1,10 @@
 #! /bin/bash
-/usr/local/bin/tag --list "${@:1}"
-/usr/local/bin/exiftool -S -Subject -Keywords "${@:1}"    
+
+for FL in "$@"
+do
+    echo "--"
+    /usr/local/bin/tag --list "${FL}"
+    /usr/local/bin/exiftool -S -Subject -Keywords "${FL}"   
+done
+
 
