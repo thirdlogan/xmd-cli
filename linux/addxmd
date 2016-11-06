@@ -17,3 +17,4 @@ do
         /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${NEWSUB}" -Keywords="${NEWSUB}" "${FL}"
     fi
 done
+

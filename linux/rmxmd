@@ -1,4 +1,5 @@
 #! /bin/bash
+
 RGX="s/,${1}//"
 
 for FL in "${@:2}"
