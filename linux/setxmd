@@ -1,7 +1,7 @@
 #! /bin/bash
 
 KWS="$1"
-FILES="${@:2}"
+FILES=${@:2}
 
 #if [[ $1 =~ \-\-fromtags ]]; then
     #TAGS=$(/usr/local/bin/tag --list "${FILES}" | sed -E "s/.*[[:space:]]//")
@@ -17,8 +17,9 @@ FILES="${@:2}"
 #
         #/usr/local/bin/tag --set "${TAGS}" "${FILES}"
     #else
-        echo "Setting Tags/xmd: ${KWS}"
-        /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${KWS}" -Keywords="${KWS}" "${FILES}"
+        echo "Setting xmd: ${KWS}"
+        /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${KWS}" -Keywords="${KWS}" "${@:2}"
     #fi
 #fi
+
 

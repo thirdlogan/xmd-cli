@@ -1,7 +1,7 @@
 #!/bin/bash
 NEW_KW=$1
 
-for FL in ${@:2}
+for FL in "${@:2}"
 do
     echo "---"
     NEWSUB_RAW=$(/usr/local/bin/exiftool -S -Keywords "${FL}" | sed -e "s/^Keywords: //")
@@ -17,3 +17,4 @@ do
         /usr/local/bin/exiftool -overwrite_original_in_place -Subject="${NEWSUB}" -Keywords="${NEWSUB}" "${FL}"
     fi
 done
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/home/dis/bin/getxmd ${@}
+
+echo "###### Please Close This Terminal ######"

@@ -1,0 +1,15 @@
+#!/bin/bash
+OUTPUT="/tmp/thunar-setxmd.output"
+>$OUTPUT
+
+dialog --title "Tags" --inputbox "Please enter a comma-only separated list of tags" 100 100 2>$OUTPUT
+
+TAGS=$(<$OUTPUT)
+echo "${TAGS}"
+
+/home/dis/bin/setxmd "${TAGS}" "${@}"
+
+rm $OUTPUT
+
+echo "###### Please Close This Terminal ######"
+
