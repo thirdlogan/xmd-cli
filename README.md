@@ -25,7 +25,7 @@ Copy `Xmd - Get.workflow` and `Xmd - Set.workflow` to either `/Library/Automator
 ## Linux
 
 ### Installing Linux Dependencies
-This has dependencies on `exiftool` and `tag`, both of which should be available via your distro's package manager. I mostly use Ubuntu, so for me the command is 
+This has dependencies on `exiftool` and `tag`, both of which should be available via your distro's package manager (you could even use `linuxbrew`). I use Ubuntu, and used it to create these scripts, so for me the command is/was: 
 > `sudo apt install exiftool tag`
 
 ### Installing Linux cli tools
