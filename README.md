@@ -1,5 +1,5 @@
 # xmd-cli
-Yes, please! Moar metadata. A set of cli utils and automation workflows (for MacOS and Linux).
+A set of cli utils and automation workflows for MacOS and Linux to handle tag/category metadata. It provides easy cli and file-browser scripts built for ease of everyday tag/category management (including keeping exif and spotlight tags in synch on MacOS). Logan is the interim maintainer, inheriting/forking from sidspencer.
 
 The bash/zsh cli tools are:
 > * getxmd
